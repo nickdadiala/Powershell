@@ -1,0 +1,12 @@
+# Every cmd has some parameters it will different function. Like "get-Service -Name wuauserv" you have to have space to set parameters and use "," to search diff values.
+And if you want to look for services for specific machine  then you can use parameters "-ComputerName"
+
+# There are positional parameter is that parameter yo dont need to supply named and not value. Example:- Get-Service wuauserv and sometimes you would need to named parameters like computername.
+
+# if you dont understand the cmds you using then you can use these comdlets "get-help" or you you just "help"then it will bring out the better solution.
+Cmdlets : help -Get-service -full or -showwindow or also you can use this if don't want to see all info -Detail or  examples.
+
+# Also you need to understand Syntax as well. 
+Cmdlet - help Get-service
+And you will useing one or either of it. NAd you can use displayname or InputObject or Name of service.
+
