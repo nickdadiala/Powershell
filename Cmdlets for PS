@@ -1,0 +1,12 @@
+#  Cmdlets for PS
+# Run Start-Transcript and it will give name of transcript with date and time stamp and you run some other Cmdlets like "Get-Hotfix"and Get-WMIObject" it will appear all in that transcript you are running.
+and when you want to stop it jut type "Stop-transcript"
+# get-WMIObject Win32_BIOS -ComputerName Laptop
+
+#Get-WMIoject Win32_Services _computerNAme Laptop it will give you all information for services.
+
+# when you want to indicate a parameters you use "-". Like example: Get-Process -name and if press ctrl+C it wil give all possible cmd. or you an use "**" sa wild card to get specific one.
+
+# Get-Service or Ctrl+R is helful and give you all hits in your history and if you go too far then ctrl+S and you take you to latest.
+
+#Get-PSReadLineKeyHandler should you all the cmdlets with details.
