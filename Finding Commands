@@ -1,0 +1,13 @@
+# Help*user* it will give only the users
+# Get-Cmd is helpful as it bring up all alias and components. And if you want to look specific thign then use "Module" example: Get-Cmd *user* -module activedircetory
+# Find-cmd is another cmd and -tag to NTFS it will only show you the reference to what ever you put in tag or another way you can also Show-cmd will show cmd with filters. and if you kno which cmd like show -cmd get hotfix
+
+# help-cat  and get-cmd cat is short name of alias.
+#########################################################################
+
+# Working with PS Modules and good way to work done.
+
+PS gallery default location in C but you can also store in GitHUB. so to find out type "Get-module" and will show you how module you have. 
+and if you want to have more module the type "Get -Module -listavailable. If you want to see azure module the cmd "Find-module Az
+
+# If you want the install them then type Ïnstall-Module Az" 

@@ -8,5 +8,7 @@ Cmdlets : help -Get-service -full or -showwindow or also you can use this if don
 
 # Also you need to understand Syntax as well. 
 Cmdlet - help Get-service
-And you will useing one or either of it. NAd you can use displayname or InputObject or Name of service.
+And you will useing one or either of it. NAd you can use displayname or InputObject or Name of service. " Help"is very useful cmd when workinng on PS.
+Like Help about* is used and specific about file in system.
+ 
 
