@@ -13,3 +13,18 @@ And if you want to look for services for specific machine  then you can use para
 
 # if you dont understand the cmds you using then you can use these comdlets "get-help" or you you just "help"then it will bring out the better solution.
 Cmdlets : help -Get-service -full or -showwindow or also you can use this if don't want to see all info -Detail or  examples.
+# you can open multiple version of PS in terminal.
+# You need to download windowes terminal which will give traditional console and give you option to run pS with diff OS. 
+# it will give all PS version you have available like PS core, Azure and Linux.
+
+# You can also add emoji and Zoom in or out in Powershell. ALt+shift++ or Alt+shift- and you also have multiple pane one panel through Windows terminal.
+
+# Understanding cmdlet structure and has consistent naming convention. Verb-SingularNoun format and Noun Prefixes Parameters "Mandatory, Optional, Named , UnNamed and Switch/Single-Value/Multiple-value.
+
+# Every cmd has some parameters it will different function. Like "get-Service -Name wuauserv" you have to have space to set parameters and use "," to search diff values.
+And if you want to look for services for specific machine  then you can use parameters "-ComputerName"
+
+# There are positional parameter is that parameter yo dont need to supply named and not value. Example:- Get-Service wuauserv and sometimes you would need to named parameters like computername.
+
+# if you dont understand the cmds you using then you can use these comdlets "get-help" or you you just "help"then it will bring out the better solution.
+Cmdlets : help -Get-service -full or -showwindow or also you can use this if don't want to see all info -Detail or  examples.

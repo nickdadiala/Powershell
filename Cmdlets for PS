@@ -1,6 +1,7 @@
 #  Cmdlets for PS
 # Run Start-Transcript and it will give name of transcript with date and time stamp and you run some other Cmdlets like "Get-Hotfix"and Get-WMIObject" it will appear all in that transcript you are running.
-and when you want to stop it jut type "Stop-transcript"
+
+#nd when you want to stop it jut type "Stop-transcript"
 # get-WMIObject Win32_BIOS -ComputerName Laptop
 
 #Get-WMIoject Win32_Services _computerNAme Laptop it will give you all information for services.
