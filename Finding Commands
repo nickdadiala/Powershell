@@ -11,3 +11,17 @@ PS gallery default location in C but you can also store in GitHUB. so to find ou
 and if you want to have more module the type "Get -Module -listavailable. If you want to see azure module the cmd "Find-module Az
 
 # If you want the install them then type Ïnstall-Module Az" 
+ and you update them using "update-module"or uninstall.
+
+# General Server mgmt 
+Some common practice cmd like Get-Computer and install or uninstall or get-Windowsfeature
+Get-WindowsFeature -ComputerNAme (Servername) or if you want to remove and add computer and rename as well .
+This is good practice to do automation and also when running renamme cmd it requires restart so Cmdlet: Restart-Computer -Computrename (name) -wait -for powershell ; write-host "done"
+Sometimes modify the device sytem or like it is not active or domain issue. So use "Test-ComputerSecureChannel" / some more helpful cmd like Set-date, 
+
+# Network setti8ngs through PS.
+get-netipaddress return information with interface network.  "Get-NetAdapterStatistics"give alot of information 
+"Get-DNsclient" get me information on DNS 
+"Get-Server"get me information on server and "Get-DNSclientServerAddress" shows who i m pointing to from dns server.
+Set-DNSclient or server to change settings  and we also have "Get-Firewall"  or "ping" also "test-connection (name of server) but "test-netconnection"is better version.
+ You can also use "test-netconnection server -port 80" to check port is open or not. Add (-traceroute) to trace.

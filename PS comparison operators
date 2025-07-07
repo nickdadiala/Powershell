@@ -1,0 +1,30 @@
+PowerShell Comparison Operators
+# example : -eq , -ne ,-gt , -lt   -ge -le  , -like - unlike
+# using some cmd :  5-eq 4 or 5 -gt 4 and run "test" -like "something"
+# test"-like "TE"
+# Test" -unlike "t"
+
+# New active directory  cmdlets 
+Get-WindowsCapability -online -Name *RSAT*
+
+# If I want install active directory
+Add-WindowsCapability -Online -Name Rsat.activedirectopry.ds-lds.tools````0
+
+# You can serach it by typing 
+Search-AdAccount -AccountExpired 
+Search-Adaccount -lockedout , -accountInactivre -datetime '01/01/2021'
+Search-AdAccount -Accountneverexpired 
+
+#Sometimes you want to customize  the AD.
+Get-ADUser -filter * -Searchbase "ou=marketing,DC=cm"
+# and sometimes to check what properties then you can use
+Get-ADUser -Fiter *-Searchbase "OU=marketing, DC=Cm" -properties lastlogindate | marketing  format-table yes
+Get-Aduser  -filter {department-like '*i*'}
+Get-ADuser -LDAPFfilter "(&(object=user))"
+
+# to set password via PS
+Set-ADaccountPassword lara -Newpassword (read-host -ADsecurestring) # give you option to set it more secure way.
+Unlock-ADaccount Williams
+Get-ADAccount Lara -properties  department # will show which department user.
+Set-ADUser lara -department 'sales'# it should let you change it 
+# you can also modify properties as well
