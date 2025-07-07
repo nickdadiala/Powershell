@@ -28,3 +28,7 @@ Unlock-ADaccount Williams
 Get-ADAccount Lara -properties  department # will show which department user.
 Set-ADUser lara -department 'sales'# it should let you change it 
 # you can also modify properties as well
+#333333333333
+# some helful commands for Az module
+Get-AzLocation
+Get-azausers
