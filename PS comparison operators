@@ -12,7 +12,7 @@ Add-WindowsCapability -Online -Name Rsat.activedirectopry.ds-lds.tools````0
 
 # You can serach it by typing 
 Search-AdAccount -AccountExpired 
-Search-Adaccount -lockedout , -accountInactivre -datetime '01/01/2021'
+Search-Adaccount -lockedout  -accountInactivre -datetime '01/01/2021'
 Search-AdAccount -Accountneverexpired 
 
 #Sometimes you want to customize  the AD.
