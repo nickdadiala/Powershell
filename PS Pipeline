@@ -1,0 +1,52 @@
+#introduction  to pipeline PS
+get-Vm | check-measure
+Server1"," Server2 | Test- Netconnection
+Get-ComputerInfo | Convertto-Html | Out-filereport.Html
+
+#######################################################
+# Get good understanding of Get-Member
+# powershell objects , properties and methods
+# "Dot Notation" Syntax= object.property
+# storing objects  in variables
+#Using parenthese to refer objects
+
+#exmaple:
+Get-ADUser Lara -properties Carlicense | Get-Member # if will show you only lara properties
+
+get-aduser lara -properties * | Get-Member 
+
+# how to use parentheses "()" means you add this perform function like do this first and then it will perfomr the rest
+# howe to use variable "$" mean you are select a specific
+(Get-Aduser Lara -properties*).Carlicense
+$lara.Carlicense # will bring only license detail for lara only
+$null -eq $lara.Carlicense
+
+# Format pipeline
+ Get-Aduser -filter {department -eq 'IT'} | Format-Table Name, Givenname , Enabled
+ # You can also use Format-Wide to show just names
+ Get-Aduser -filter {department -eq 'IT'} | Format-Table Name, Givenname , Enabled
+ # And if you want to export in CSV
+ Get-Aduser -filter {department -eq 'IT'} | Format-Table Name, Givenname , Enabled | Export-Csv C:\temp\folder\user.CSV
+ Get-Aduser -filter {department -eq 'IT'} |Format-Table Name ,  Givenname | Get-Member
+ # if you are using format at end of pipeline 
+
+ # Passing Pipeline Data by value
+ ##Used first
+ ## Accepts inoput by ojects type
+ Help Test-Connection -Full # will show what values it can can accept
+ 'server1', 'Londc1' | Test-Connection
+  # if you want to read the file
+  Get-Content .\computer.txt | Test-Connection
+
+  ### How to use properties name so if cmd accept properties in pipeline 
+  notepad.exe
+  #open the txt file and change it csv file give a header like ComputerName
+  Import-Csv .\computer.csv
+  # OR
+  Import-Csv .\computer.csv | Get-Member
+  Import-Csv .\computer.csv | Test-NetConnection
+  # if I want to use properties as parameter
+  Help Test-NetConnection -parameter ComputerName
+  Help Test-NetConnection -parameter Port
+# but what if this is coming from AD.
+Get-AdComputer -filter * # it will show all computer but nothing to show because no properties to it.
