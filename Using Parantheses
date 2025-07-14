@@ -1,0 +1,38 @@
+# How to Parentheses
+
+# Use of these is change the order of operations
+# We want to property of object 
+
+(Get_netipAdress -Interfacealias ethernet -addressfamily IPv4).IPAddress
+Test-Connection -Computername (get--content .\computer.txt)
+
+# measuring The objects- Some of the commands used as measure object and how many items and basic math like sum total 
+use Ctrl+r
+Get-Aduser -filter {department -eq 'IT'} |Measure-object
+
+get-process |Measure # declare how many properties and object working 
+
+Get-Process | Measure -property WS -SUm -Average -MAx -min
+That what measure object can do
+
+# Now we will learn sorting object  is name of cmdlets can be used in batch script or you want to convert sonmeting
+# "sort" And "Unique" 
+
+Get-process | Sort-Object ID -desending
+
+Get-Process | Sort-Object ID , ProcessName 
+
+Get-Process | Sort-Object @{expression='Prcoessname'; descend='$true'}, @{Expression='Processname'; Desend='$false'}
+#Expression is used to declare your value 
+
+# Now we will learn about selecting object
+# select -object or "select"
+# -first/-last/-skip/-unique/-index
+Get-Process | Sort-Object @{expression='Prcoessname'; descend='$true'}, @{Expression='Processname'; desend='$false'} | select-object -Last 2
+Get-Process | Sort-Object @{expression='Prcoessname'; descend='$true'}, @{Expression='ID'; Desend='$false'} | Select-Object -First 5
+# Specific property and Expandproperty
+Get-ADuser  -filter {Department -like 'M'}
+Get-ADuser  -filter {Department -like 'M'} -porperties Department ,Memberof| Select-Object -First -Last
+Get-ADuser  -filter {Department -like 'M'} -porperties Department ,Memberof| Select-object -expandproperty memeberof
+Get-ADuser  Administrator -pro memberof | Select-Object -first memberof
+
