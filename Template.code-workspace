@@ -1,11 +1,59 @@
-"editor.tabSize": 2,
-"editor.insertSpaces": true,
-"editor.formatOnSave": true,
-"editor.wordWrap": "on"
-
-"files.exclude": {
-  "**/.git": true,
-  "**/node_modules": true,
-  "**/dist": true,
-  "**/.DS_Store": true
+{
+  "folders": [
+    {
+      "path": "frontend"
+    },
+    {
+      "path": "backend"
+    },
+    {
+      "path": "shared"
+    },
+    {
+      "path": "docs"
+    },
+    {
+      "path": "tests"
+    },
+    {
+      "path": "scripts"
+    },
+    {
+      "path": "config"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/node_modules": true,
+      "**/dist": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/build": true
+    },
+    "eslint.enable": true,
+    "prettier.requireConfig": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ms-python.python"
+    ]
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnSave": true
+  }
 }
+ 
