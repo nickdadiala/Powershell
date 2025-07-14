@@ -10,9 +10,9 @@ Test-Connection -Computername (get--content .\computer.txt)
 use Ctrl+r
 Get-Aduser -filter {department -eq 'IT'} |Measure-object
 
-get-process |Measure # declare how many properties and object working 
+get-process | Measure-Object # declare how many properties and object working 
 
-Get-Process | Measure -property WS -SUm -Average -MAx -min
+Get-Process | Measure-Object -property WS -SUm -Average -MAx -min
 That what measure object can do
 
 # Now we will learn sorting object  is name of cmdlets can be used in batch script or you want to convert sonmeting
@@ -32,7 +32,7 @@ Get-Process | Sort-Object @{expression='Prcoessname'; descend='$true'}, @{Expres
 Get-Process | Sort-Object @{expression='Prcoessname'; descend='$true'}, @{Expression='ID'; Desend='$false'} | Select-Object -First 5
 # Specific property and Expandproperty
 Get-ADuser  -filter {Department -like 'M'}
-Get-ADuser  -filter {Department -like 'M'} -porperties Department ,Memberof| Select-Object -First -Last
-Get-ADuser  -filter {Department -like 'M'} -porperties Department ,Memberof| Select-object -expandproperty memeberof
+Get-ADuser  -filter {Department -like 'M'} -proerties Department ,Memberof| Select-Object -First -Last
+Get-ADuser  -filter {Department -like 'M'} -properties Department ,Memberof| Select-object -expandproperty memeberof
 Get-ADuser  Administrator -pro memberof | Select-Object -first memberof
 

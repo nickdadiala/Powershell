@@ -9,10 +9,8 @@
     "setting4": {
         "nestedKey": "nestedValue"
     },
-
-
- "Features": {
- "enablesignup": "True",
- "enablelogging": "True"
- }
+    "Features": {
+    "enablesignup": "True",
+    "enablelogging": "True"
+   }
 } 
