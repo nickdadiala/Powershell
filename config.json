@@ -1,0 +1,18 @@
+{
+    "setting1": true,
+    "setting2": "value",
+    "setting3": [
+        1,
+        2,
+        3
+    ],
+    "setting4": {
+        "nestedKey": "nestedValue"
+    },
+
+
+ "Features": {
+ "enablesignup": "True",
+ "enablelogging": "True"
+ }
+} 
