@@ -1,0 +1,28 @@
+Get-PSprovider
+# you can you help to search things  in psprovider
+ Get-PSdrive
+# shows me where all drives and what root it is and registry stuff
+cd is set loaction and dir or ls is child item.
+
+get cmd *item*
+
+# working with filesystem  in powershell
+Cd= Set-location
+dir/ls (get-childitem)
+type/cat/gc (get-content)
+del/erase/rd/ri/rm/rmdir(remove-item)
+
+# mapping network drive 
+New-PSDrive -name X _psprovider filesytem -root
+\\server\share -persist
+
+New-PSdrive -Name X -psprovider filesystem -root \\londvr\c$
+Get-psdrive
+Use 0of -persist cmd is show it on your explorer as well
+If you have th name, position and root in same line then you can use positional parameters.
+
+Some more helful during automation in powershell
+Working with registry provider
+Set-itemProperty='HKLM\Software\microsoft\windows' -name DENyALL -value '1'
+ Get-Itemproperty= 'HKLM:\SYSTEM\CurrentControlset\control\Terminalserver\ -name fdenytsconnections
+
