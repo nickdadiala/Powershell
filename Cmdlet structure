@@ -1,0 +1,32 @@
+Get-process | Sort -desending WS | Select -first 5
+Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'Test'}} # cruly bracekst helfps to block  the script
+#$_. is something refer to each process in pipeline. or you can also $PSitem is alternative option
+Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.WS'}}
+# represent first process , second process and now if you want to add value then you need add in cmdlets
+Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.ws/mb'}}
+
+# learn Filters object so use of where-object/ where basic filtering syntax.
+# lets try something simple cmdlets
+Get-service | where-Object Status -eq stop/running
+Get-service | where-Object {Status -eq stop -and Name -like '*win*'} 
+
+
+Get-service | where-Object {$_.Status -eq 'stop' -and $_.Name -like '*win*'}
+
+Get-AdUser -filter| Where-Object {$_.Department -like 'IT'}
+
+Get-AdUser -filter| Where-Object {$_.Department -like 'IT'}
+
+#Exmaples of using Foreach-object 
+Get-Service | ForEach-Object{$_.2}
+1..5 | ForEach-Object {write-host "doubling$_.";$_.2}
+
+# learning Piping output of files
+# some ofthe mmon practice to put out the files in CSV , excel, word.
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Format-Table |out-file C:\PS\Marketing.txt
+# if you want to see name and select that too.
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Format-Table | Export-Csv Marketing.csv-notypeinformation
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Select-Object name, Enabled | Export-csv marketing.csv -NoTypeInformation 
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select name, Enabled,memeberof | Export-csv marketing.csv -NoTypeInformation 
+# exmaple of using convert-html
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select name, Enabled,memeberof | ConvertTo-Html Marketing.html -NoTypeInformation.\.git
