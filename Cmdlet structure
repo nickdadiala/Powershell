@@ -1,9 +1,9 @@
-Get-process | Sort -desending WS | Select -first 5
-Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'Test'}} # cruly bracekst helfps to block  the script
+Get-process | Sort-Object -desending WS | Select-Object -first 5
+Get-Process | Sort-Object -desending WS| Select-Object -first 5 ProcessName, @{Label='WS(MB)'; Expression={'Test'}} # cruly bracekst helfps to block  the script
 #$_. is something refer to each process in pipeline. or you can also $PSitem is alternative option
-Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.WS'}}
+Get-Process | Sort-Object -desending WS| Select-Object -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.WS'}}
 # represent first process , second process and now if you want to add value then you need add in cmdlets
-Get-Process | Sort -desending WS| Select -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.ws/mb'}}
+Get-Process | Sort-Object -desending WS| Select-Object -first 5 ProcessName, @{Label='WS(MB)'; Expression={'$_.ws/mb'}}
 
 # learn Filters object so use of where-object/ where basic filtering syntax.
 # lets try something simple cmdlets
@@ -27,6 +27,6 @@ Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Format-Table 
 # if you want to see name and select that too.
 Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Format-Table | Export-Csv Marketing.csv-notypeinformation
 Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" | Select-Object name, Enabled | Export-csv marketing.csv -NoTypeInformation 
-Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select name, Enabled,memeberof | Export-csv marketing.csv -NoTypeInformation 
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select-Object name, Enabled,memeberof | Export-csv marketing.csv -NoTypeInformation 
 # exmaple of using convert-html
-Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select name, Enabled,memeberof | ConvertTo-Html Marketing.html -NoTypeInformation.\.git
+Get-Aduser -filter * -Searchbase "OU=Marketing,DC=adatum,DC=com" -properties memberof |Select-Object name, Enabled,memeberof | ConvertTo-Html Marketing.html -NoTypeInformation.\.git
