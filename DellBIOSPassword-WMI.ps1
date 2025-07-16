@@ -82,22 +82,24 @@ while($Counter -lt 6)
 }
  
 Function New-DellBiosPassword
-{}
+{
     Param(
-       [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty('Admin','System')]$passwordType,
-       [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Password,
+       [Parameter(Mandatory=$true)][ValidateSet('Admin','System')][SecureString] $passwordType,
+       [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][SecureString]$Password,
        [Parameter(Mandatory=$false)][ValidateNotNullOrEmpty()][String]$adminPW
     ) 
     if($adminPW)
-    {}
+    {
      $adminbytes = $script:Encoder.GetBytes($adminPW)
     if(($securityInterface.SetNewPassword(1,$adminPW.Length, $adminbytes,$adminPW,$passwordType,$Password)).Status -eq 0)
     {
         Write-Output -Value "$passwordtype.password is set"
+    }   
       else {
         Write-Output -Name"$($passwordType)Password exist" -value "Failed"
       }
     }
+} 
     # Set the admin or system password
     else {
         if (($securityInterface.SetNewPassword(0,0,0,$passwordType,"",$Password)).Status -eq 0)
