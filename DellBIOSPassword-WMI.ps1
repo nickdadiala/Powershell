@@ -119,7 +119,7 @@ Function New-DellBiosPassword
     $attempt +=1
     $setPassword= Read-host -prompt "enter password($attempt of $maxattempts)"
    If 
-   ($setPassword.length -ge 12) {
+   ($setPassword.length -ge 13) {
     Write-host "Passlength correct and meet the requirement"
     $authenticated =$true
    }
