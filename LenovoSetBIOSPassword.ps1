@@ -9,8 +9,9 @@ $tpm = Get-Tpm
  Write-Host "TPM presence: $($tpm.Tpmpresence)"
  Write-Host "Tpm Enabled: $($tpm.TpmEnabled)"
  Write-host "Tpm Disabled: $($tpm.TpmDisabled)"
-  If($tpm.Tpmpresence -and -not $tpm.TpmDisbaled){
-    Write-Host "tpm is present and need to cleared"
+  If($tpm.Tpmpresence -and -not $tpm.TpmDisbaled) 
+  {
+    Write-Host "tpm is present and need to be cleared"
   }else{
     Write-Host "Tpm is not presnt and can not be cleared"
   }
