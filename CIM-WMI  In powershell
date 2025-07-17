@@ -1,0 +1,40 @@
+# What is CIM
+# Cmds like get-CimInstance , Invoke-CimMethod, New\Get-CimSession
+
+# CIm Sessions- Get-WMIObject is equvilant to Get-CimInstance and also has Invoke and Get and new Sessions 
+
+# To get better understanding of WMI and CIM architecture
+
+#WMI/CIM repo and -Namespace Root Vm2 
+#WMI Commands is sepcific for RPC service/DCOM whereas CIM is uses WEb service. 
+# protocal used to work with remote to DCOM.
+Like Managing VM or  server
+# mgmtobject and provider and installed and talks to main.
+
+# Working with Classes and properties and Methods..
+
+# Download the Wmi exploer for best rsults.
+
+#  WMI queries with filter options
+# Ex: Get-WMiobject Win32_logicdisk -Computername Lonserv1 Oe get-ciminstance Win32_logicdisk -compputername  Lonserv1
+# another example : Get -Wmiobject Win32_Logicdisk -filter "deviceID='Z:'" you can also use the -eg  or -ge 
+#Get -Wmiobject Win32_Logicdisk -filter "deviceID=Z and Freespace>=5gb"
+
+
+WQL Syntax
+#Select, From , where these are syntax where can be used in powershell 
+# Get-Wimobject -Query(param) "Select *from  Win32_logicdisk" or if I only want to fix disk within drive then use where syantax
+# Get-Wmiobject -query "Select *from Win32_logicdisk where drivetype=3"
+# get-CimInstance With same query will shows table in systematic.
+# $session= New-CimSession _computerName Lonserv1
+# get-CimInstance -query "Select *from Win32_logicdisk where drivetype=3" -cimSession $session NAd when you use -Computername then you use it and then shutdown and with ssession it will still running at background
+
+
+#Addintional WMI Language
+# Get-WminObject -query " Select* from Win32_logicdisk where -name = 'audio'
+# Get-WminObject -query "Select * from Win32_Logicdisk where -name Like "%audio%"  and it will show you only audio and act as wild card
+
+# Get-WminObject -query "Select * from Win32_Logicdisk where -name not Like "%audio%" will show only with not audio 
+# Get-WminObject -query "Select * from Win32_Logicdisk where -name Like '[AF]%'" want to havigate to a and f
+# # Get-WminObject -query "Select * from Win32_Logicdisk where -name Like '[A-F]%'" And State='stopped'and state='disabled'
+

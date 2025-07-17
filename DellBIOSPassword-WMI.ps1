@@ -128,6 +128,6 @@ Function New-DellBiosPassword
    }
 }
  if (-not $setPassword) {
-    Write-Host " prompt $maxattempts reached its limit"
+    Write-Host "prompt $maxattempts reached its limit"
  }
    

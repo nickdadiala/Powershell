@@ -19,10 +19,10 @@ New-PSDrive -name X _psprovider filesytem -root
 New-PSdrive -Name X -psprovider filesystem -root \\londvr\c$
 Get-psdrive
 Use 0of -persist cmd is show it on your explorer as well
-If you have th name, position and root in same line then you can use positional parameters.
+#If you have th name, position and root in same line then you can use positional parameters.
 
 Some more helful during automation in powershell
 Working with registry provider
 Set-itemProperty='HKLM\Software\microsoft\windows' -name DENyALL -value '1'
- Get-Itemproperty= 'HKLM:\SYSTEM\CurrentControlset\control\Terminalserver\ -name fdenytsconnections
+ Get-Itemproperty= 'HKLM:\SYSTEM\CurrentControlset\control\Terminalserver\ -name fdenytsconnections'
 
