@@ -21,8 +21,7 @@ Function New-LenovoSetBIOSPassword
         [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Namespace,
         [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$ClassName,
         [Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][securestring]$password,
-        [Parameter(Mandatory=$false)][ValidateNotNullOrEmpty()][securestring]$setPW
-                                                                        
+        [Parameter(Mandatory=$false)][ValidateNotNullOrEmpty()][string]$setPW                                                        
         )
 }
  If($setPW)
