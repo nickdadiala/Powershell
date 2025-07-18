@@ -1,7 +1,7 @@
 #introduction  to pipeline PS
 get-Vm | check-measure
 Server1"," Server2 | Test- Netconnection
-Get-ComputerInfo | Convertto-Html | Out-filereport.Html
+Get-ComputerInfo | Convertto-Html | Out-file report.Html
 
 #######################################################
 # Get good understanding of Get-Member
