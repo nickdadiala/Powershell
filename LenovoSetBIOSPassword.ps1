@@ -37,7 +37,7 @@ Function New-LenovoSetBIOSPassword
   }  
   #set new BIOS PAssword   
   else {
-   if(($securityInterface.SetBiosPassword($setpw, "" ,$password)).status -eq 0)
+   if(($securityInterface.SetBiosPassword(0,0,$setpw, "" ,$password)).status -eq 0)
    {
        Write-Output -Value "$password.Password is set"
      else{
