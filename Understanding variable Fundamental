@@ -1,0 +1,48 @@
+# used as named memory location like '$' or piece of text and data file in one place.
+# '$' and $Psversiontable, $_ , $psitem
+# $ IpAddress
+ # you cann assign value to variables
+#$variable =value
+$IpAddress= get-NetIpaddress using add hawk thing
+
+$exmaple : $computers = dc1, dc2 , dc3
+
+Or you can also use $users = ab , dc ,cd
+
+# using variables and strings
+# imp to know diff between single and double 
+it does make differ when variable is mentioned
+ # $value = 'string'
+ this is'$value"
+ but if you know there is one or more value then use double quote
+ ex: "The value of $value is $value"
+ and if want to get rid of the line use backtick
+
+ there are some sub expression. 
+ like $users.count 
+ "there are $users.count user in variable"
+ so to fix this use sub expression
+ "there are $($user.count) user in varible.
+ also can use "+ symbol +"
+
+
+ #casting variable types
+ you want o delacre what type of data in variable
+ -[string]
+ -[int]
+  if i want to cast the variable
+  [string]$computername
+  [double]$num2 = 12.333
+  $num2 |get-member
+  if I want to interger
+  $num2 -as [int]
+
+
+
+  Working with variables , property and methods
+  variable part of property or methods
+  use tab key to find out what is in the pipeline
+  $user. and press tab 
+  $nic = get-WMIobject win32_netwrokadaptor -filter "physcial =$true"
+  $nic | select *  meran show me all 
+  

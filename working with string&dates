@@ -1,0 +1,13 @@
+# string | get-member
+#if I Were to use $string.insert (9,'short')
+#split, join , replace operators. 
+#$tring.replace('s', $$$)
+# get-Content .compputer.txt | test-netconnections
+.trim () is helpful 
+
+# working with dates
+# $dates.property and $timestamp
+
+Get-Date | Get-Member
+# $date.day or $date.dayofweek or $date.adddays(90)
+#$date.
