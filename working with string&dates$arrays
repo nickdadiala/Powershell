@@ -11,3 +11,19 @@
 Get-Date | Get-Member
 # $date.day or $date.dayofweek or $date.adddays(90)
 #$date.
+
+# now working witn arrays
+$computername = 'dc', 'dc1'
+$computername Get-AdComputer 'List'
+$computerlist.count  in arrays
+$numbers - 1..20
+$numbers[0..4]
+[array]$computername = 'dc'
+
+
+
+# using array operators
+$computername -contains 'dc'
+'dc'-in $computername means In opeerator used how3
+#"notin"another operator used 
+# 
