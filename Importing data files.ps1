@@ -22,10 +22,15 @@ $Arraylist.Add('DC4-DC5')
  write-host "$computerlist is contacted succesfully"
 
  # Change the arraylist for looping and include check or if parameter for validate the connection.
-  if($computerlist.Computer) in arraylist establish contact {
-    write-output "$comouterlist is established" else 
+  if$($computerlist.Computer) in arraylist establish contact {
+    write-output "$computerlist is established" else 
   } else {
     write-output "$comouterlist is not established"
+  }
+  ###############################################################
+  $prerequsites = @(
+ @{Name ='DotnetFramework'; Check ="Get-itemproperty -path 'HKLM\Software\Microsoft\DotNetFramework -Name Verion -ErrorActionSilentlyContinue"}
+  )
   }
 
 

@@ -101,7 +101,6 @@ Function New-DellBiosPassword
     }
 } 
     # Set the admin or system password
-    else {
         if (($securityInterface.SetNewPassword(0,0,0,$passwordType,"",$Password)).Status -eq 0)
         {
             Write-Output -value "$passwordtype.password is set"
