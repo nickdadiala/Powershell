@@ -99,16 +99,13 @@ Function New-DellBiosPassword
         Write-Output -Name"$($passwordType)Password exist" -value "Failed"
       }
     }
-} 
     # Set the admin or system password
-        if (($securityInterface.SetNewPassword(0,0,0,$passwordType,"",$Password)).Status -eq 0)
-        {
+        if (($securityInterface.SetNewPassword(0,0,0,$passwordType,"",$Password)).Status -eq 0){
             Write-Output -value "$passwordtype.password is set"
-        }    
-            else {
+    }  else {
                 Write-Output -name"$($passwordType)Password exist" - Value"Failed"
-            }
         }
+    }
 # Set user prompt for max attempts to set password
   $setPassword = "$false"
  $MaxAttempts = "3"
