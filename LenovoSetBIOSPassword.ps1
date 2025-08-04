@@ -1,6 +1,6 @@
 # Checks before you run this script and confirm Password state is "0"
-Get-CimInstance -Namespace root/WMI -ClassName Lenovo_BiosPasswordSettings
-Get-WmiObject -Namespace root/WMI -classname Lenovo_setBiosSettings
+Get-CimInstance -Namespace root\WMI -ClassName Lenovo_BiosPasswordSettings
+Get-WmiObject -Namespace root\WMI -classname Lenovo_BiosSetting
 #Run the commands to set initial Supervisor Password and replace it
 $setPW = Get-WmiObject -Namespace root/WMI -class Lenovo_SetBiosPassword
 #
