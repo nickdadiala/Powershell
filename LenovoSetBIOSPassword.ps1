@@ -1,9 +1,13 @@
 # Checks before you run this script and confirm Password state is "0"
 Get-CimInstance -Namespace root\WMI -ClassName Lenovo_BiosPasswordSettings
 Get-WmiObject -Namespace root\WMI -classname Lenovo_BiosSetting
+Get-WmiObject -Namespace root\wmi -List | Where-Object {$_.name -like "*Lenovo*"}
 #Run the commands to set initial Supervisor Password and replace it
 $setPW = Get-WmiObject -Namespace root/WMI -class Lenovo_SetBiosPassword
-#
+$password = 0
+$securityInterface = Get-WmiObject -Namespace root\wmi -Class Lenovo_SetBiosSetting
+$passwordSettings = Get-WmiObject -Namespace root\wmi -class Lenovo_SetBiosSetting
+$passwordSettings.passwordstate
 $setPW.SetBiosPassword("pap,oldpassword,newpassword,ascii,us")
 # Chekc the status TPM physical presence
 $tpm = Get-Tpm
@@ -29,7 +33,9 @@ Function New-LenovoSetBIOSPassword
   {
     $Script:encoder= [system.text.encoding]::UTF8
     $bytes= $Script:Encoder.GetBytes($setPW)
-    if(($securityInterface.SetBiosPassword(1,$setPW.length,$bytes,$password)).status -eq 0)
+    try{
+      if($passwordsettings.passwordstate -eq 0)
+    #if(($securityInterface.SetBiosPassword(1,$setPW.length,$bytes,$password)).status -eq 0)
   {
     Write-output -Value "$password.Password is set"
   }
@@ -37,10 +43,13 @@ Function New-LenovoSetBIOSPassword
         Write-Output -Name "($password.password exist)" -value "falied"
     } 
   }  
+  Catch {
+    Write-Output -name "($password.password exist)" -value "failed"
+  }
   #set new BIOS PAssword   
    if(($securityInterface.SetBiosPassword(0,0,$setpw, "" ,$password)).status -eq 0)
    {
-       Write-Output -Value "$password.Password is set"
+       Write-Output -Value "$password.Password is set" 
      else{
        Write-Output -Name "($password.password exist)" -value "failed"
      }
