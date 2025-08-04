@@ -28,6 +28,7 @@ Function New-LenovoSetBIOSPassword
  If($setPW)
   {
     $bytes= $Script:Encoder.GetBytes($setPW)
+    $Script:encoder= [system.text.encoding]::UTF8
     if(($securityInterface.SetBiosPassword(1,$setPW.length,$bytes,$password)).status -eq 0)
   {
     Write-output -Value "$password.Password is set"
