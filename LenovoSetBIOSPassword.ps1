@@ -33,19 +33,19 @@ Function New-LenovoSetBIOSPassword
   {
     $Script:encoder= [system.text.encoding]::UTF8
     $bytes= $Script:Encoder.GetBytes($setPW)
-    try{
+    try {
       if($passwordsettings.passwordstate -eq 0)
     #if(($securityInterface.SetBiosPassword(1,$setPW.length,$bytes,$password)).status -eq 0)
-  {
+    {
     Write-output -Value "$password.Password is set"
-  }
-    else{
+  } else{
         Write-Output -Name "($password.password exist)" -value "falied"
     } 
   }  
   Catch {
     Write-Output -name "($password.password exist)" -value "failed"
   }
+}
   #set new BIOS PAssword   
    if(($securityInterface.SetBiosPassword(0,0,$setpw, "" ,$password)).status -eq 0)
    {
