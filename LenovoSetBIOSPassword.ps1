@@ -4,7 +4,7 @@ Get-WmiObject -Namespace root\WMI -classname Lenovo_BiosSetting
 #Run the commands to set initial Supervisor Password and replace it
 $setPW = Get-WmiObject -Namespace root/WMI -class Lenovo_SetBiosPassword
 #
-$setPW.SetBiosPassword("pap,secretpassword,secretpassword,ascii,us")
+$setPW.SetBiosPassword("pap,oldpassword,newpassword,ascii,us")
 # Chekc the status TPM physical presence
 $tpm = Get-Tpm
  Write-Host "TPM presence: $($tpm.Tpmpresence)"
