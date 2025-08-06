@@ -9,6 +9,7 @@ $securityInterface = Get-WmiObject -Namespace root\wmi -Class Lenovo_SetBiosSett
 $passwordSettings = Get-WmiObject -Namespace root\wmi -class Lenovo_SetBiosSetting
 $passwordSettings.passwordstate
 $setPW.SetBiosPassword("pap,oldpassword,newpassword,ascii,us")
+$PasswordSet.SetBiosPassword("pap,CurrentPassword,NewPassword,ascii,us")
 # Chekc the status TPM physical presence
 $tpm = Get-Tpm
  Write-Host "TPM presence: $($tpm.Tpmpresence)"
@@ -47,7 +48,7 @@ Function New-LenovoSetBIOSPassword
   }
 }
   #set new BIOS PAssword   
-   if(($securityInterface.SetBiosPassword(0,0,$setpw, "" ,$password)).status -eq 0)
+   if(($PasswordSet.SetBiosPassword(0,0,$setpw, "" ,$password)).status -eq 0)
    {
        Write-Output -Value "$password.Password is set" 
      else{
